@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+venv/
+
+# env
+.env
+
+# data
+data/raw/
+*.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Cursor
+.cursor/
+
+# mac
+.DS_Store
+
+
