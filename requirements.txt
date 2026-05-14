@@ -79,12 +79,15 @@ platformdirs==4.9.6
 prometheus_client==0.25.0
 prompt_toolkit==3.0.52
 psutil==7.2.2
+psycopg==3.3.4
+psycopg-binary==3.3.4
 ptyprocess==0.7.0
 pure_eval==0.2.3
 pycparser==3.0
 Pygments==2.20.0
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
 python-json-logger==4.1.0
 PyYAML==6.0.3
 pyzmq==27.1.0
@@ -103,6 +106,7 @@ shap==0.51.0
 six==1.17.0
 slicer==0.0.8
 soupsieve==2.8.3
+SQLAlchemy==2.0.49
 stack-data==0.6.3
 statsmodels==0.14.6
 terminado==0.18.1
