@@ -7,15 +7,15 @@
 ## 💡 핵심 인사이트
 
 - **사료비(feed_ppi)** 가 달걀 가격에 가장 큰 영향
-  — RF 변수 중요도 feed_ppi 단독 약 36%, feed 계열 합산 약 94% / SHAP 기여값 +600원대
+  - RF 변수 중요도 feed_ppi 단독 약 36%, feed 계열 합산 약 94% / SHAP 기여값 +600원대
 
 - **전력(electricity_ppi)** 은 elec 계열 합산 약 6%로 영향력 미미
-  — OLS 음(-)의 계수는 다중공선성 왜곡으로 인과 해석 불가
+  - OLS 음(-)의 계수는 다중공선성 왜곡으로 인과 해석 불가
 
 - **전체 R²=0.188은 두 레짐 혼합에 의한 왜곡**
-  — 평상시(n=94) R²=0.808 / AI충격기(n=23) R²=0.121로 원가-가격 연동 사실상 단절  
-  -> 단순히 "변수가 부족한 모델"이 아니라  
-   **"외부충격 시 가격 결정 구조 자체가 달라지는 레짐 전환 문제"** 로 해석
+  - 평상시(n=94) R²=0.808 / AI충격기(n=23) R²=0.121로 원가-가격 연동 사실상 단절  
+    -> 단순히 "변수가 부족한 모델"이 아니라  
+     **"외부충격 시 가격 결정 구조 자체가 달라지는 레짐 전환 문제"** 로 해석
 
 ---
 
@@ -135,9 +135,16 @@ egg_price_analysis/
 
 | 시나리오          | 조건                                             | 활용                            |
 | ----------------- | ------------------------------------------------ | ------------------------------- |
-| 저점 매입 판단    | `소매가 ≤ 6,597원(예비 추정) AND ai_dummy=0`     | 원가 하한선 근접 시 매입 검토   |
-| 이상 신호 감지    | `절댓값(실제가 - 예측가) > 550원 AND ai_dummy=0` | 수급 이상 조기 감지             |
+| 저점 매입 판단    | `소매가 ≤ 6,597원 AND ai_dummy=0`                | 원가 하한선 근접 시 매입 검토   |
+| 이상 신호 감지    | `절대값(실제가 - 예측가) > 550원 AND ai_dummy=0` | 수급 이상 조기 감지             |
 | AI파동 체크리스트 | 사료비 안정 + 가격 급등                          | 원가 모델 -> 수급 모니터링 전환 |
+
+---
+
+## 📊 대시보드
+
+[Looker Studio 대시보드 바로가기](https://datastudio.google.com/s/hVLPC8XgNEM)
+![대시보드 미리보기](output/figures/dashboard_preview.png)
 
 ---
 
@@ -154,7 +161,7 @@ egg_price_analysis/
 | Modeling        | statsmodels, scikit-learn, XGBoost |
 | Explainability  | SHAP                               |
 | Visualization   | matplotlib, seaborn                |
-| Dashboard       | Looker Studio (예정)               |
+| Dashboard       | Looker Studio                      |
 | Version Control | Git, GitHub                        |
 
 ---
